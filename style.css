@@ -39,3 +39,18 @@ nav a {
 nav a:hover {
   background: #c4d8c1;
 }
+
+
+.car-link {
+  position: relative;
+  display: inline-block;
+}
+
+.front-wing-hotspot {
+  position: absolute;
+  left: 0;
+  top: 48%;
+  width: 15%;
+  height: 25%;
+  cursor: pointer;
+}
