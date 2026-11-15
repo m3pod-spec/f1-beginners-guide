@@ -3,28 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>F1 Car Guide for Beginners</title>
+  <meta name="theme-color" content="#c92335">
+  <meta name="description" content="Explore Formula 1 circuits around the world. Pick a circuit on the map to see its track layout.">
+  <title>the circuit club — an f1 track explorer</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Discover an F1 car</h1>
-    <p>Choose a part of the car to learn what it does.</p>
-  </header>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="The Circuit Club home"><span class="wordmark-mark">cc</span><span>THE CIRCUIT CLUB</span></a>
+      <div class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF FORMULA 1</div>
+    </header>
 
-  <main>
-    <nav aria-label="Car parts">
-      <a href="front-wing.html">Front wing</a>
-      <a href="tyres.html">Tyres</a>
-      <a href="cockpit.html">Cockpit</a>
-      <a href="rear-wing.html">Rear wing</a>
-    </nav>
+    <main>
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE WORLD, ONE TRACK AT A TIME</div>
+        <h1>pick a place.<br><span>find the track.</span></h1>
+        <p class="intro-copy">tap a red pin on the map or choose a circuit from the list. let's go racing.</p>
+      </section>
 
-    
-<a href="front-wing.html" class="car-link" aria-label="Learn about the front wing">
-  <img src="car.png" alt="A Formula One car facing left" width="600">
-  <span class="front-wing-hotspot"></span>
-</a>
-  </main>
+      <section class="explorer" aria-label="Formula 1 circuit explorer">
+        <aside class="sidebar">
+          <div class="sidebar-heading">
+            <div>
+              <p class="mini-label">THE GRID</p>
+              <h2>find a circuit</h2>
+            </div>
+            <span class="count-pill" id="circuit-count">— TRACKS</span>
+          </div>
+          <label class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="circuit-search" type="search" placeholder="search circuits..." autocomplete="off" aria-label="Search circuits">
+            <kbd>/</kbd>
+          </label>
+          <div class="list-caption"><span>ALL CIRCUITS</span><span>SELECT ONE ↴</span></div>
+          <div id="circuit-list" class="circuit-list" aria-label="Circuit list">
+            <div class="loading-list"><span class="loader"></span> getting the grid ready...</div>
+          </div>
+          <div class="sidebar-footer"><span class="tiny-check">✳</span>  pick a circuit to see its layout</div>
+        </aside>
+
+        <section class="map-panel">
+          <div class="map-topline">
+            <div class="map-label"><span class="map-pulse"></span> WORLD MAP</div>
+            <div class="map-hint">CLICK A PIN TO EXPLORE</div>
+          </div>
+          <div id="map" role="application" aria-label="World map showing Formula 1 circuits"></div>
+          <div class="map-legend"><span class="legend-pin"></span> CIRCUIT LOCATION <span class="legend-track"></span> TRACK LAYOUT</div>
+          <div class="selected-track" id="selected-track" aria-live="polite">
+            <div class="empty-track-icon">◎</div>
+            <div class="empty-track-text"><strong>your next track is waiting</strong><span>choose any red pin to open its layout</span></div>
+            <span class="empty-track-arrow">↗</span>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>MADE FOR THE LOVE OF THE TRACK <span class="footer-heart">♥</span></span>
+      <span>MAP © OPENSTREETMAP · CIRCUIT DATA: <a href="https://github.com/bacinger/f1-circuits" target="_blank" rel="noreferrer">BACINGER / F1-CIRCUITS</a></span>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>
