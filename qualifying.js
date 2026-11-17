@@ -99,7 +99,17 @@
     el("name-error").textContent = "";
     el("player-name").textContent = playerName;
     supabaseClient = connectSupabase();
-    selectedQuestions = shuffle(questions).slice(0, QUESTION_COUNT);
+    selectedQuestions = shuffle(questions).slice(0, QUESTION_COUNT).map((question) => {
+      const options = shuffle(question.a.map((answer, index) => ({
+        answer,
+        isCorrect: index === question.correct
+      })));
+      return {
+        ...question,
+        a: options.map((option) => option.answer),
+        correct: options.findIndex((option) => option.isCorrect)
+      };
+    });
     questionIndex = 0;
     score = 0;
     finished = false;
