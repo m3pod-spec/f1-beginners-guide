@@ -266,3 +266,28 @@ h1 span { font-style: italic; }
   .intro::after { display: none; }
   h1 { font-size: clamp(48px, 13vw, 66px); }
 }
+
+
+/* THE CIRCUIT CLUB — learning hub navigation + editorial pages */
+.site-nav{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid #efdce1}
+.site-nav a{text-decoration:none;color:#62565c;font:600 9px var(--mono);letter-spacing:.055em;padding:10px 13px;border:1px solid transparent;border-radius:999px;transition:all .18s ease}
+.site-nav a:hover,.site-nav a[aria-current=page]{color:white;background:var(--ink);border-color:var(--ink);box-shadow:3px 3px 0 var(--red)}
+.site-nav a[aria-current=page]{pointer-events:none}
+.learn-main{padding:36px 0 52px}
+.learn-hero{position:relative;padding:24px 0 30px}
+.learn-kicker{color:var(--red);font:500 9px var(--mono);letter-spacing:.15em}
+.learn-hero h1{max-width:850px;margin:15px 0}
+.learn-hero p{max-width:650px;color:#786e70;font-size:14px;line-height:1.75;font-weight:600}
+.page-stamp{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:99px;background:#fff0f4;color:var(--red-dark);font:500 8px var(--mono);letter-spacing:.1em}
+.learn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:18px}
+.learn-card{background:#fffefe;border:1px solid #efdce1;border-radius:19px;padding:22px;box-shadow:0 12px 30px rgba(93,27,48,.045)}
+.learn-card.dark{background:var(--ink);color:white;border-color:var(--ink)}
+.learn-card .card-no{color:var(--red);font:500 9px var(--mono);letter-spacing:.12em}
+.learn-card h2{margin:9px 0 8px;font:800 25px/1.05 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.learn-card p{color:#786e70;font-size:12px;line-height:1.75;margin:0}
+.learn-card.dark p{color:#e2d5d9}
+.learn-callout{margin-top:16px;border-left:4px solid var(--red);border-radius:0 14px 14px 0;background:#fff0f4;padding:17px 20px;color:#6f5960;font-size:12px;line-height:1.7}
+.learn-callout strong{color:var(--red-dark)}
+.learn-footer-links{display:flex;justify-content:space-between;gap:12px;margin-top:25px}
+.learn-footer-links a{text-decoration:none;color:var(--red-dark);font:600 9px var(--mono);border-bottom:1px solid #e9aab8;padding:9px 0}
+@media(max-width:700px){.site-nav{justify-content:flex-start;gap:4px}.site-nav a{padding:9px 10px;font-size:8px}.learn-grid{grid-template-columns:1fr}.learn-main{padding-top:23px}.learn-hero{padding-top:14px}.learn-hero p{font-size:12px}}
