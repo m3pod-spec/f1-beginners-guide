@@ -499,3 +499,22 @@ h1 span { font-style: italic; }
   .learn-footer-links { align-items: stretch; flex-direction: column; }
   .learn-footer-links a { justify-content: center; }
 }
+
+/* 2026 season status in the selected circuit panel */
+.current-season-badge {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid #f0b7c4;
+  border-radius: 999px;
+  background: #fff0f4;
+  color: #a90f2b;
+  font: 600 8px var(--mono);
+  letter-spacing: .07em;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .track-preview-heading { flex-wrap: wrap; }
+  .current-season-badge { order: 3; }
+}
