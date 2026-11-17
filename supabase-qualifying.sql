@@ -9,6 +9,11 @@ create table if not exists public.qualifying_scores (
 create index if not exists qualifying_scores_leaderboard_idx
   on public.qualifying_scores (score desc, created_at asc);
 
+-- Give the public website only the database permissions it needs.
+grant usage on schema public to anon;
+grant select, insert on table public.qualifying_scores to anon;
+grant usage, select on sequence public.qualifying_scores_id_seq to anon;
+
 alter table public.qualifying_scores enable row level security;
 
 drop policy if exists "Anyone can view qualifying scores" on public.qualifying_scores;
