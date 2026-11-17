@@ -41,7 +41,7 @@ h1 span { color: var(--red); }
 .search-wrap input::placeholder { color: #b0a5a4; }
 .search-wrap kbd { font: 9px var(--mono); color: #9d9291; border: 1px solid #e9dfdc; border-radius: 5px; padding: 2px 5px; }
 .list-caption { display: flex; justify-content: space-between; padding: 0 21px 9px; color: #a39896; font-size: 8px; letter-spacing: .12em; }
-.list-instruction { margin: 0; padding: 0 21px 9px; color: #8f7d82; font-size: 9px; line-height: 1.5; font-weight: 700; }
+.list-instruction { margin: 0; padding: 2px 21px 12px; color: #806b73; font-size: 13px; line-height: 1.5; font-weight: 800; }
 .circuit-list { overflow-y: auto; flex: 1; padding: 0 10px 10px; scrollbar-width: thin; scrollbar-color: #e8c4c8 transparent; }
 .circuit-item { width: 100%; display: flex; align-items: center; gap: 11px; text-align: left; border: 0; background: transparent; padding: 10px 11px; border-radius: 12px; cursor: pointer; color: var(--ink); font-family: var(--round); transition: background .18s, transform .18s; }
 .circuit-item:hover { background: #fff3f3; transform: translateX(2px); }
