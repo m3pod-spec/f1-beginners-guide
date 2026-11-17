@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#d94f91">
+<meta name="description" content="Take on 15 quick-fire Formula 1 questions. Will you get P1?">
+<title>Qualifying — The Circuit Club</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="qualifying.css">
+</head><body class="qualifying-page"><div class="page-shell">
+<header class="topbar"><a class="wordmark" href="index.html" aria-label="The Circuit Club home"><span class="wordmark-mark">cc</span><span>THE CIRCUIT CLUB</span></a><div class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF FORMULA 1</div></header>
+<nav class="site-nav" aria-label="Main navigation">
+<a href="index.html" data-page="circuits">CIRCUITS</a><a href="basics.html" data-page="basics">F1 101</a><a href="race-weekend.html" data-page="race">RACE WEEKEND</a><a href="teams.html" data-page="teams">TEAMS &amp; DRIVERS</a><a href="rules.html" data-page="rules">RULES &amp; FLAGS</a><a href="strategy.html" data-page="strategy">STRATEGY</a><a href="qualifying.html" data-page="qualifying" aria-current="page">QUALIFYING</a>
+</nav>
+<main class="qualifying-main">
+<section class="qualifying-intro"><div class="qualifying-kicker"><span class="kicker-line"></span> THE CIRCUIT CLUB ARCADE <span class="kicker-line"></span></div><div class="qualifying-wordmark"><span>CC</span><span>ARCADE / 001</span></div><h1 id="game-title">QUALIFYING<span class="title-dot">.</span></h1><p class="qualifying-subtitle">15 QUESTIONS. 7 SECONDS EACH. ONE SHOT AT P1.</p></section>
+<section class="game-shell" aria-live="polite">
+<div class="game-topline"><span class="game-status"><i></i> READY WHEN YOU ARE</span><span class="game-edition">F1 QUICK-FIRE</span></div>
+<section id="start-screen" class="game-screen start-screen">
+<div class="start-copy"><p class="start-overline">LIGHTS ON. EYES UP.</p><h2>will you get <span>P1?</span></h2><p class="start-description">Jump into 15 quick-fire questions from across the world of Formula 1. You have seven seconds for each one. Make it count.</p></div>
+<div class="start-panel"><div class="start-stats"><div><strong>15</strong><span>QUESTIONS</span></div><div><strong>07<span>s</span></strong><span>PER QUESTION</span></div><div><strong>40</strong><span>IN THE POOL</span></div></div>
+<label class="nickname-label" for="nickname">DRIVER NAME / NICKNAME</label><input id="nickname" class="nickname-input" type="text" maxlength="16" minlength="2" autocomplete="nickname" placeholder="enter your name" aria-describedby="nickname-hint">
+<p id="nickname-hint" class="input-hint">2–16 characters. Your name and score will appear on the public leaderboard.</p><p id="name-error" class="form-error" role="alert"></p><button id="start-button" class="arcade-button" type="button">ENTER THE GRID <span>↗</span></button></div>
+<div class="start-bottom"><span>NO PRACTICE RUNS</span><span>EVERY QUESTION COUNTS</span></div>
+</section>
+<section id="question-screen" class="game-screen question-screen" hidden>
+<div class="question-meta"><span id="question-count">QUESTION 01 / 15</span><span id="question-category">THE SPORT</span></div><div class="question-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+<div class="timer-row"><span>TIME TO ANSWER</span><div class="timer-display"><span id="timer-number">7</span><small>SEC</small></div></div><div class="timer-track" aria-hidden="true"><span id="timer-fill"></span></div>
+<h2 id="question-text" class="question-text"></h2><div id="answer-options" class="answer-options"></div><div id="answer-feedback" class="answer-feedback" role="status" aria-live="assertive"></div>
+<div class="question-footer"><span>DRIVER: <strong id="player-name"></strong></span><span>SCORE: <strong id="current-score">0</strong></span></div>
+</section>
+<section id="result-screen" class="game-screen result-screen" hidden>
+<p class="result-overline">CHEQUERED FLAG</p><h2 id="result-heading">SESSION COMPLETE<span>.</span></h2><div class="result-score"><strong id="final-score">0</strong><span>/ 15</span></div><p id="result-message" class="result-message"></p>
+<section id="leaderboard-section" class="leaderboard-section" hidden aria-labelledby="leaderboard-title">
+<div class="leaderboard-heading"><div><span class="leaderboard-kicker">THE ALL-TIME GRID</span><h3 id="leaderboard-title">GLOBAL LEADERBOARD</h3></div><span class="leaderboard-live"><i></i> LIVE</span></div>
+<p id="leaderboard-position" class="leaderboard-position"></p><div class="leaderboard-table-wrap"><table class="leaderboard-table"><thead><tr><th>POS</th><th>DRIVER</th><th>SCORE</th></tr></thead><tbody id="leaderboard-body"></tbody></table></div></section>
+<p id="leaderboard-unavailable" class="leaderboard-unavailable" hidden></p><a class="arcade-button home-button" href="index.html">BACK TO HOMEPAGE <span>↗</span></a>
+</section></section>
+<div class="qualifying-footnote"><span>THE CIRCUIT CLUB</span><span>MADE FOR THE LOVE OF THE TRACK ♥</span></div>
+</main></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="qualifying-config.js"></script><script src="qualifying.js"></script>
+</body></html>
