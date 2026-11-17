@@ -150,6 +150,14 @@ function drawTrackPreview(geojson) {
   selectedElement.append(svg);
 }
 
+
+function scrollToCircuitDisplay() {
+  if (window.matchMedia('(max-width: 850px)').matches) {
+    const panel = mapElement.closest('.map-panel');
+    if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 async function selectCircuit(circuit) {
   activeId = circuit.id;
   updateMarkers();
@@ -181,6 +189,7 @@ async function selectCircuit(circuit) {
     selectedElement.querySelector('.track-status').textContent = 'ERROR';
     console.error(error);
   }
+  scrollToCircuitDisplay();
 }
 
 async function initialise() {
