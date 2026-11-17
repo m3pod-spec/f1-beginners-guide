@@ -568,3 +568,74 @@ body {
 .learn-callout { border-color: #f0d3e0; border-left-color: #d94f91; background: linear-gradient(105deg,#fff0f6,#fffafb); }
 .learn-footer-links a { border-color: #f0d6e2; color: #b83e70; }
 .footer a, .footer-heart, .tiny-check, .search-icon { color: #d94f91; }
+
+
+/* MOBILE: keep circuit browsing in the normal page scroll */
+@media (max-width: 850px) {
+  .sidebar {
+    min-height: 0;
+    max-height: none;
+  }
+  .circuit-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    max-height: none;
+    overflow: visible;
+    flex: 0 0 auto;
+    padding: 2px 12px 14px;
+  }
+  .circuit-item {
+    min-width: 0;
+    min-height: 58px;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+  .item-number {
+    width: 22px;
+    height: 22px;
+    font-size: 8px;
+  }
+  .item-copy {
+    flex: 1;
+    min-width: 0;
+  }
+  .item-name {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 1.2;
+  }
+  .item-place {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .item-arrow { display: none; }
+  .map-panel { scroll-margin-top: 12px; }
+  .selected-track { scroll-margin-top: 12px; }
+}
+@media (max-width: 520px) {
+  .topbar { gap: 8px; }
+  .wordmark { gap: 8px; font-size: 10px; letter-spacing: .1em; }
+  .wordmark-mark { width: 30px; height: 30px; }
+  .topbar-note { font-size: 6px; letter-spacing: .04em; gap: 6px; }
+  .site-nav { flex-wrap: wrap; }
+  .site-nav a { min-height: 38px; display: inline-flex; align-items: center; }
+  .sidebar-heading { padding: 18px 15px 13px; }
+  .list-caption { padding-left: 15px; padding-right: 15px; }
+  .list-instruction { padding: 2px 15px 12px; font-size: 12px; }
+  #map { height: 320px; min-height: 300px; flex-basis: 320px; }
+  .track-preview { height: 165px; }
+  .map-legend { flex-wrap: wrap; row-gap: 6px; }
+  .selected-track { padding: 12px; }
+}
+@media (max-width: 360px) {
+  .topbar-note { max-width: 118px; line-height: 1.35; }
+  .circuit-item { padding: 9px 6px; gap: 6px; }
+  .item-number { width: 20px; height: 20px; }
+  .item-name { font-size: 10px; }
+}
