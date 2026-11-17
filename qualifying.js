@@ -194,7 +194,23 @@
   }
 
   async function showLeaderboard() {
-    if (!supabaseClient) return;
+    if (!supabaseClient) {
+      const config = window.QUALIFYING_SUPABASE || {};
+      let message = "The leaderboard connection could not start. Refresh the page and try again.";
+      if (!config.url || !config.anonKey) {
+        message = "The leaderboard has not been configured yet. Add the Supabase project URL and publishable key in qualifying-config.js.";
+      } else if (!window.supabase || !window.supabase.createClient) {
+        message = "The Supabase library did not load. Check your internet connection, refresh the page, and try again.";
+      }
+      console.error("Global leaderboard could not connect.", {
+        hasProjectUrl: Boolean(config.url),
+        hasPublishableKey: Boolean(config.anonKey),
+        supabaseLibraryLoaded: Boolean(window.supabase && window.supabase.createClient)
+      });
+      el("leaderboard-unavailable").textContent = message;
+      el("leaderboard-unavailable").hidden = false;
+      return;
+    }
     try {
       const { data: inserted, error: insertError } = await supabaseClient
         .from("qualifying_scores")
