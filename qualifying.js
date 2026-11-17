@@ -16,7 +16,7 @@
     { category: "THE RACE", q: "What happens during a Safety Car period?", a: ["Drivers must race at full speed", "The race is neutralised and drivers slow down", "The race is automatically cancelled", "All drivers change tyres"], correct: 1 },
     { category: "CIRCUITS", q: "What is a chicane?", a: ["A slow sequence of alternating corners", "A type of racing tyre", "The area where trophies are kept", "A driver's radio message"], correct: 0 },
     { category: "STRATEGY", q: "What is an undercut?", a: ["Pitting earlier than a rival to try to gain time on fresh tyres", "Taking the final corner slowly", "Starting from the pit lane", "Skipping a practice session"], correct: 0 },
-    { category: "THE GRID", q: "What does DRS stand for?", a: ["Driver Radio System", "Drag Reduction System", "Downforce Racing Setup", "Dual Racing Strategy"], correct: 1 },
+    { category: "RACE WEEKEND", q: "What is the formation lap?", a: ["The lap drivers complete before the race start", "The final lap of the Grand Prix", "A lap used only during practice", "The lap after the chequered flag"], correct: 0 },
     { category: "THE SPORT", q: "How many points does a driver normally receive for finishing first in a Grand Prix?", a: ["10", "18", "20", "25"], correct: 3 },
     { category: "RACE WEEKEND", q: "What do drivers compete for in qualifying?", a: ["The fastest lap in the race", "Their starting position for the Grand Prix", "The Constructors' trophy", "A mandatory pit stop"], correct: 1 },
     { category: "THE CARS", q: "What does the halo help protect?", a: ["The engine", "The tyres", "The driver's head", "The rear wing"], correct: 2 },
