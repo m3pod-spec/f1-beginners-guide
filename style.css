@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --red: #c92335;
-  --red-dark: #a91d2d;
+  --red: #d94f91;
+  --red-dark: #b83e70;
   --pink: #f8dce2;
   --pink-soft: #fff0f2;
   --ink: #211d1e;
@@ -161,8 +161,8 @@ h1 span { color: var(--red); }
 
 /* GIRL POWER, GRID POWER — a softer palette with proper racing attitude */
 :root {
-  --red: #d51f3d;
-  --red-dark: #a90f2b;
+  --red: #d94f91;
+  --red-dark: #b83e70;
   --pink: #f5cbd5;
   --pink-soft: #fff0f4;
   --ink: #171519;
@@ -199,7 +199,7 @@ h1 span { font-style: italic; }
   position: absolute;
   right: 3px;
   bottom: 35px;
-  color: rgba(213, 31, 61, .11);
+  color: rgba(217, 79, 145, .11);
   font: 900 clamp(30px, 5vw, 62px)/1 'Barlow Condensed', sans-serif;
   letter-spacing: .04em;
   transform: rotate(-7deg);
@@ -222,7 +222,7 @@ h1 span { font-style: italic; }
 }
 .search-wrap:focus-within {
   border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(213, 31, 61, .09);
+  box-shadow: 0 0 0 3px rgba(217, 79, 145, .09);
 }
 .circuit-item {
   border-radius: 10px;
@@ -509,7 +509,7 @@ h1 span { font-style: italic; }
   border: 1px solid #f0b7c4;
   border-radius: 999px;
   background: #fff0f4;
-  color: #a90f2b;
+  color: #b83e70;
   font: 600 8px var(--mono);
   letter-spacing: .07em;
   white-space: nowrap;
@@ -518,3 +518,52 @@ h1 span { font-style: italic; }
   .track-preview-heading { flex-wrap: wrap; }
   .current-season-badge { order: 3; }
 }
+
+
+/* THE CIRCUIT CLUB — pink-led colour refresh */
+:root {
+  --red: #d94f91;
+  --red-dark: #b83e70;
+  --pink: #f4bfd3;
+  --pink-soft: #fff0f6;
+  --ink: #211b22;
+  --muted: #81727b;
+  --paper: #fffdfd;
+  --line: #f1dce6;
+}
+body {
+  background:
+    radial-gradient(ellipse at 8% 4%, rgba(244,191,211,.48), transparent 29rem),
+    #fff7fa;
+}
+.topbar { border-bottom-color: #f0dce5; }
+.wordmark-mark {
+  color: #ffe0ec;
+  box-shadow: 4px 4px 0 #d94f91;
+}
+.live-dot, .map-pulse { background: #d94f91; box-shadow: 0 0 0 4px #f9dce8; }
+.intro::after { color: rgba(217,79,145,.12); }
+.sidebar, .map-panel, .learn-hero, .learn-card { border-color: #f0dce5; }
+.sidebar { border-top-color: #d94f91; }
+.search-wrap, .sidebar-footer { background-color: #fff7fa; }
+.search-wrap:focus-within { box-shadow: 0 0 0 3px rgba(217,79,145,.10); }
+.circuit-item:hover { background: #ffedf4; border-color: #edb4cc; }
+.circuit-item.active {
+  background: #d94f91;
+  border-color: #d94f91;
+  box-shadow: 3px 3px 0 #f4bfd3;
+}
+.item-number { background: #fce5ee; color: #b83e70; }
+.circuit-item.active .item-number { background: rgba(255,255,255,.22); color: white; }
+.selected-track { background: linear-gradient(115deg,#fff0f6,#fff9fb 72%); border-color: #f1d2e0; }
+.track-preview { border-color: #edc8d9; }
+.track-preview .track-glow { stroke: #f2a9c8; }
+.site-nav a:hover, .site-nav a[aria-current=page] { box-shadow: 3px 3px 0 #d94f91; }
+.learn-hero { border-top-color: #d94f91; }
+.learn-hero .page-stamp { color: #ffe0ec; box-shadow: 3px 3px 0 #d94f91; }
+.learn-card { border-top-color: #d94f91; }
+.learn-card.dark { border-top-color: #d94f91; }
+.learn-card::after { border-color: rgba(217,79,145,.15); box-shadow: 0 0 0 12px rgba(217,79,145,.045),0 0 0 25px rgba(217,79,145,.03); }
+.learn-callout { border-color: #f0d3e0; border-left-color: #d94f91; background: linear-gradient(105deg,#fff0f6,#fffafb); }
+.learn-footer-links a { border-color: #f0d6e2; color: #b83e70; }
+.footer a, .footer-heart, .tiny-check, .search-icon { color: #d94f91; }
