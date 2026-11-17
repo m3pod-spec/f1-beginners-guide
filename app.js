@@ -66,7 +66,15 @@ function updateMarkers() {
   });
 }
 
-function showTrackStatus(title, message, loading = false) {
+const current2026CircuitIds = new Set([
+  'au-1953', 'cn-2004', 'jp-1962', 'us-2022', 'ca-1978',
+  'mc-1929', 'es-1991', 'at-1969', 'gb-1948', 'be-1925',
+  'hu-1986', 'nl-1948', 'it-1922', 'es-2026', 'az-2016',
+  'my-1999', 'sg-2008', 'us-2012', 'mx-1962', 'br-1940',
+  'us-2023', 'qa-2004', 'ae-2009'
+]);
+
+function showTrackStatus(title, message, loading = false, isCurrent2026 = false) {
   selectedElement.replaceChildren();
   const heading = document.createElement('div');
   heading.className = 'track-preview-heading';
@@ -79,7 +87,15 @@ function showTrackStatus(title, message, loading = false) {
   const status = document.createElement('span');
   status.className = 'track-status';
   status.textContent = loading ? 'LOADING' : 'TRACK LAYOUT';
-  heading.append(copy, status);
+  heading.append(copy);
+  if (isCurrent2026) {
+    const seasonBadge = document.createElement('span');
+    seasonBadge.className = 'current-season-badge';
+    seasonBadge.textContent = 'CURRENT 2026 CIRCUIT';
+    seasonBadge.setAttribute('aria-label', 'Current 2026 circuit');
+    heading.append(seasonBadge);
+  }
+  heading.append(status);
   selectedElement.append(heading);
   if (loading) {
     const placeholder = document.createElement('div');
@@ -139,7 +155,7 @@ async function selectCircuit(circuit) {
   updateMarkers();
   renderList(searchElement.value);
   const currentRequest = ++requestNumber;
-  showTrackStatus(circuit.name, 'loading the track layout…', true);
+  showTrackStatus(circuit.name, 'loading the track layout…', true, current2026CircuitIds.has(circuit.id));
   try {
     const response = await fetch(geoJsonBase + encodeURIComponent(circuit.id) + '.geojson');
     if (!response.ok) throw new Error('Track data could not be loaded (' + response.status + ')');
@@ -156,12 +172,12 @@ async function selectCircuit(circuit) {
         map.fitBounds(bounds.pad(0.22), { maxZoom: 16, animate: true });
       }
     }
-    showTrackStatus(circuit.name, circuit.location, false);
+    showTrackStatus(circuit.name, circuit.location, false, current2026CircuitIds.has(circuit.id));
     drawTrackPreview(geojson);
     selectedElement.querySelector('.track-status').textContent = 'LAYOUT OPEN';
   } catch (error) {
     if (currentRequest !== requestNumber) return;
-    showTrackStatus(circuit.name, 'could not load this track — please try again.', false);
+    showTrackStatus(circuit.name, 'could not load this track — please try again.', false, current2026CircuitIds.has(circuit.id));
     selectedElement.querySelector('.track-status').textContent = 'ERROR';
     console.error(error);
   }
