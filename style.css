@@ -639,3 +639,70 @@ body {
   .item-number { width: 20px; height: 20px; }
   .item-name { font-size: 10px; }
 }
+
+
+/* 2026 TEAM COLOURS — scoped to the team and driver grid */
+.team-grid .team-card {
+  background: var(--team-bg);
+  border: 1px solid var(--team-border);
+  border-top: 5px solid var(--team-border);
+  color: var(--team-text);
+  box-shadow: 0 10px 28px rgba(35, 25, 30, .10);
+}
+.team-grid .team-card h2 { color: var(--team-text); }
+.team-grid .team-card p { color: var(--team-copy); }
+.team-grid .team-card .card-no { color: var(--team-accent); }
+.team-grid .team-card .card-no::before { background: var(--team-accent); }
+.team-grid .team-card::after {
+  border-color: color-mix(in srgb, var(--team-accent) 30%, transparent);
+  box-shadow:
+    0 0 0 12px color-mix(in srgb, var(--team-accent) 9%, transparent),
+    0 0 0 25px color-mix(in srgb, var(--team-accent) 6%, transparent);
+}
+.team-mercedes {
+  --team-bg: #27F4D2; --team-border: #171717; --team-accent: #C8C8C8;
+  --team-text: #171717; --team-copy: #263b38;
+}
+.team-redbull {
+  --team-bg: #3671C6; --team-border: #F5C542; --team-accent: #E84B50;
+  --team-text: #FFFFFF; --team-copy: #F0F3FA;
+}
+.team-ferrari {
+  --team-bg: #E8002D; --team-border: #F5C542; --team-accent: #75A88A;
+  --team-text: #FFFFFF; --team-copy: #FFF0F2;
+}
+.team-mclaren {
+  --team-bg: #FF8000; --team-border: #171717; --team-accent: #F5B477;
+  --team-text: #171717; --team-copy: #442b17;
+}
+.team-alpine {
+  --team-bg: #00A1E8; --team-border: #F0A6C5; --team-accent: #171717;
+  --team-text: #FFFFFF; --team-copy: #EAF8FF;
+}
+.team-racingbulls {
+  --team-bg: #6692FF; --team-border: #9299A5; --team-accent: #D4D7DC;
+  --team-text: #FFFFFF; --team-copy: #F1F4FF;
+}
+.team-aston {
+  --team-bg: #229971; --team-border: #171717; --team-accent: #A8C8B9;
+  --team-text: #FFFFFF; --team-copy: #E8F5EF;
+}
+.team-williams {
+  --team-bg: #1868DB; --team-border: #FFFFFF; --team-accent: #DCE8F8;
+  --team-text: #FFFFFF; --team-copy: #EAF1FF;
+}
+.team-audi {
+  --team-bg: #FF2D00; --team-border: #929292; --team-accent: #D8D8D8;
+  --team-text: #FFFFFF; --team-copy: #FFF0EC;
+}
+.team-haas {
+  --team-bg: #DEE1E2; --team-border: #E10600; --team-accent: #B83E70;
+  --team-text: #171519; --team-copy: #49484A;
+}
+.team-cadillac {
+  --team-bg: #AAAAAD; --team-border: #D4AF37; --team-accent: #B83E70;
+  --team-text: #171519; --team-copy: #49484A;
+}
+@media (max-width: 700px) {
+  .team-grid .team-card { min-height: 0; }
+}
