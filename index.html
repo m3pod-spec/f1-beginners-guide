@@ -12,6 +12,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="device-notice-backdrop" id="device-notice-backdrop">
+  <section class="device-notice" role="dialog" aria-modal="true" aria-labelledby="device-notice-title" aria-describedby="device-notice-message">
+    <h2 id="device-notice-title">A LITTLE HEADS-UP</h2>
+    <p id="device-notice-message">this website is optimised for laptop use</p>
+    <button type="button" id="device-notice-ok">OK</button>
+  </section>
+</div>
+<script>
+(() => {
+  const backdrop = document.getElementById('device-notice-backdrop');
+  const okButton = document.getElementById('device-notice-ok');
+  if (!backdrop || !okButton) return;
+  const closeNotice = () => backdrop.remove();
+  okButton.addEventListener('click', closeNotice);
+  okButton.focus();
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && document.body.contains(backdrop)) closeNotice();
+  });
+})();
+</script>
+
   <div class="page-shell">
     <header class="topbar">
       <a class="wordmark" href="#" aria-label="The Circuit Club home"><span class="wordmark-mark">cc</span><span>THE CIRCUIT CLUB</span></a>
