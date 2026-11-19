@@ -813,3 +813,13 @@ body {
   .profile-pagination { flex-direction: column; }
   .profile-pagination a { justify-content: center; }
 }
+
+
+/* small instruction above the team cards */
+.team-grid-note {
+  margin: 8px 0 16px;
+  color: #786e70;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
