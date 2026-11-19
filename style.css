@@ -823,3 +823,121 @@ body {
   font-weight: 600;
   line-height: 1.5;
 }
+
+
+/* FORMULA 1 HISTORY PAGE */
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 10px;
+  margin: 15px 0;
+}
+.history-stats > div {
+  padding: 19px 16px;
+  border: 1px solid #f0dce5;
+  border-radius: 15px;
+  background: var(--paper);
+}
+.history-stats strong {
+  display: block;
+  color: var(--red-dark);
+  font: 800 clamp(30px,4vw,43px)/1 'Barlow Condensed','DM Sans',sans-serif;
+}
+.history-stats span {
+  display: block;
+  margin-top: 8px;
+  color: #786e70;
+  font: 600 8px/1.5 var(--mono);
+  letter-spacing: .08em;
+}
+.history-section {
+  margin-top: 18px;
+  padding: 25px;
+  border: 1px solid #f0dce5;
+  border-radius: 17px;
+  background: var(--paper);
+}
+.history-section > h2,.history-table-heading h2 {
+  margin: 0 0 17px;
+  color: var(--ink);
+  font: 800 clamp(29px,4vw,43px)/.98 'Barlow Condensed','DM Sans',sans-serif;
+}
+.history-two,.history-record-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+}
+.history-two .learn-card { min-height: 0; }
+.history-two .learn-card h3,.history-record-grid h3 {
+  margin: 8px 0;
+  font: 800 20px/1.05 'Barlow Condensed','DM Sans',sans-serif;
+  text-transform: uppercase;
+}
+.history-record-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.history-record-grid article {
+  padding: 17px;
+  border: 1px solid #f0dce5;
+  border-radius: 13px;
+  background: #fff9fb;
+}
+.history-record-grid article > strong {
+  color: var(--red-dark);
+  font: 800 24px/1 'Barlow Condensed','DM Sans',sans-serif;
+}
+.history-record-grid p,.history-note-list p,.history-copy {
+  color: #786e70;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.history-note-list p { margin: 0; padding: 12px 0; border-bottom: 1px solid #f0dce5; }
+.history-note-list p:last-child { border-bottom: 0; }
+.history-note-list strong { color: var(--ink); }
+.history-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+.history-table-caption {
+  max-width: 230px;
+  color: #786e70;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.history-table-wrap {
+  max-height: 620px;
+  overflow: auto;
+  border: 1px solid #f0dce5;
+  border-radius: 12px;
+}
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 11px;
+}
+.history-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px 14px;
+  background: var(--ink);
+  color: white;
+  font: 600 8px var(--mono);
+  letter-spacing: .1em;
+}
+.history-table td { padding: 9px 14px; border-bottom: 1px solid #f1e4e9; color: #62595c; }
+.history-table tbody tr:nth-child(even) { background: #fff7fa; }
+.history-table td:first-child { color: var(--red-dark); font: 700 11px var(--mono); }
+.history-table td strong { color: var(--ink); }
+.history-footnote { margin: 13px 0 0; color: #887d80; font-size: 10px; line-height: 1.7; }
+.history-copy { margin: 0 0 12px; }
+.history-copy:last-child { margin-bottom: 0; }
+@media(max-width:700px) {
+  .history-stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .history-two,.history-record-grid { grid-template-columns: 1fr; }
+  .history-section { padding: 19px 15px; }
+  .history-table-heading { display: block; }
+  .history-table-caption { max-width: none; margin-top: -6px; }
+}
