@@ -4,26 +4,6 @@
 <meta name="description" content="Take on 15 quick-fire Formula 1 questions. Will you get P1?">
 <title>Qualifying — The Circuit Club</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="qualifying.css">
 </head><body class="qualifying-page">
-<div class="device-notice-backdrop" id="device-notice-backdrop">
-  <section class="device-notice" role="dialog" aria-modal="true" aria-labelledby="device-notice-title" aria-describedby="device-notice-message">
-    <h2 id="device-notice-title">A LITTLE HEADS-UP</h2>
-    <p id="device-notice-message">this website is optimised for laptop use</p>
-    <button type="button" id="device-notice-ok">OK</button>
-  </section>
-</div>
-<script>
-(() => {
-  const backdrop = document.getElementById('device-notice-backdrop');
-  const okButton = document.getElementById('device-notice-ok');
-  if (!backdrop || !okButton) return;
-  const closeNotice = () => backdrop.remove();
-  okButton.addEventListener('click', closeNotice);
-  okButton.focus();
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && document.body.contains(backdrop)) closeNotice();
-  });
-})();
-</script>
 <div class="page-shell">
 <header class="topbar"><a class="wordmark" href="index.html" aria-label="The Circuit Club home"><span class="wordmark-mark">cc</span><span>THE CIRCUIT CLUB</span></a><div class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF FORMULA 1</div></header>
 <nav class="site-nav" aria-label="Main navigation">
